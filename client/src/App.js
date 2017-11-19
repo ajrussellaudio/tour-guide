@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Container } from 'semantic-ui-react';
 import ToursContainer from './containers/ToursContainer';
+import TourDetailsContainer from './containers/TourDetailsContainer';
 
 class App extends Component {
   constructor(props) {
@@ -16,9 +18,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <ToursContainer onChange={this.handleTourSelected}/>
-      </div>
+      <Container className="App">
+        <ToursContainer onChange={this.handleTourSelected} />
+        <TourDetailsContainer {...this.state} />
+      </Container>
     );
   }
 }
