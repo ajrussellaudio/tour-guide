@@ -1,51 +1,34 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: [:show, :update, :destroy]
+  before_action :set_point, only: [:show]
 
   # GET /tours
   def index
     @tours = Tour.all
-
-    render json: @tours
+    render json: @tours.as_json({
+      include: {
+        points: {
+          only: [:name]
+        }
+      },
+      except: [:created_at, :updated_at]
+    })
   end
 
   # GET /tours/1
   def show
-    render json: @tour
-  end
-
-  # POST /tours
-  def create
-    @tour = Tour.new(tour_params)
-
-    if @tour.save
-      render json: @tour, status: :created, location: @tour
-    else
-      render json: @tour.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /tours/1
-  def update
-    if @tour.update(tour_params)
-      render json: @tour
-    else
-      render json: @tour.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /tours/1
-  def destroy
-    @tour.destroy
+    render json: @tour.as_json({
+      include: {
+        points: {
+          except: [:created_at, :updated_at, :tour_id]
+        }
+      },
+      except: [:created_at, :updated_at]
+    })
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_tour
+    def set_point
       @tour = Tour.find(params[:id])
-    end
-
-    # Only allow a trusted parameter "white list" through.
-    def tour_params
-      params.require(:tour).permit(:name, :info)
     end
 end
