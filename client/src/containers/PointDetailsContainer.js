@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
 import PointDetails from '../components/PointDetails';
 
 export default class PointDetailsContainer extends React.Component {
@@ -13,10 +12,6 @@ export default class PointDetailsContainer extends React.Component {
   }
 
   render() {
-    return (
-      <Container>
-        <PointDetails {...this.state} />
-      </Container>
-    );
+    return <PointDetails {...this.state} />;
   }
 }

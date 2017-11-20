@@ -18,14 +18,10 @@ class App extends Component {
 
   render() {
     return (
-      <Grid classname="App">
-        <Grid.Column width={3}>
-          <ToursContainer onChange={this.handleTourSelected} />
-        </Grid.Column>
-        <Grid.Column width={13}>
-          <TourDetailsContainer {...this.state} />
-        </Grid.Column>
-      </Grid>
+      <Container className="App" fluid>
+        <ToursContainer onChange={this.handleTourSelected} />
+        <TourDetailsContainer {...this.state} />
+      </Container>
     );
   }
 }
