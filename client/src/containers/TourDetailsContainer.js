@@ -1,5 +1,6 @@
 import React from 'react';
-import { Item } from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
+import PointsList from '../components/PointsList';
 
 export default class TourDetailsContainer extends React.Component {
   constructor(props) {
@@ -18,10 +19,11 @@ export default class TourDetailsContainer extends React.Component {
   render() {
     if (!this.state.tour) return null;
     return (
-      <div id="TourDetails">
-        <h1>{this.state.tour.name}</h1>
-        <p>{this.state.tour.info}</p>
-      </div>
+      <Container id="tour-details">
+        <Header as="h1">{this.state.tour.name}</Header>
+        <Header as="h3">{this.state.tour.info}</Header>
+        <PointsList points={this.state.tour.points}/>
+      </Container>
     );
   }
 }
