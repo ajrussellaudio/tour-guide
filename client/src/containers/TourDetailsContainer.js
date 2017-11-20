@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Header } from 'semantic-ui-react';
-import PointsList from '../components/PointsList';
+// import PointsList from '../components/PointsList';
+import PointsMap from '../components/PointsMap';
 
 export default class TourDetailsContainer extends React.Component {
   constructor(props) {
@@ -21,7 +22,8 @@ export default class TourDetailsContainer extends React.Component {
       <Container id="tour-details">
         <Header as="h1">{this.state.tour.name}</Header>
         <Header as="h3">{this.state.tour.info}</Header>
-        <PointsList points={this.state.tour.points}/>
+        {/* <PointsList points={this.state.tour.points}/> */}
+        <PointsMap points={this.state.tour.points}/>
       </Container>
     );
   }

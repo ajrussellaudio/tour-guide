@@ -4,8 +4,10 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "leaflet": "^1.2.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-leaflet": "^1.7.4",
     "react-scripts": "1.0.17",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.76.0"
