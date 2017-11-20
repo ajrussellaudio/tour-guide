@@ -12,6 +12,6 @@ export default (props) => {
   })
 
   return (
-    <Select selection onChange={props.onChange} placeholder="Select a Tour" options={options}/>
+    <Select fluid selection onChange={props.onChange} placeholder="Select a Tour" options={options}/>
   );
 };

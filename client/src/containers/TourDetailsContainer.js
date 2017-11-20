@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import { Grid, Header } from 'semantic-ui-react';
 import PointsMap from '../components/PointsMap';
-import PointDetails from './PointDetailsContainer';
+import PointDetailsContainer from './PointDetailsContainer';
 
 export default class TourDetailsContainer extends React.Component {
   constructor(props) {
@@ -26,11 +26,14 @@ export default class TourDetailsContainer extends React.Component {
   render() {
     if (!this.state.tour) return null;
     return (
-      <Container fluid>
-        {/* <Header as="h1">{this.state.tour.name}</Header> */}
-        <PointsMap points={this.state.tour.points} onMarkerClick={this.handlePointSelected} />
-        <PointDetails info={this.state.tour.info} tour={this.props.selectedTour} {...this.state} />
-      </Container>
+      <Grid stackable>
+        <Grid.Column width={8}>
+          <PointsMap points={this.state.tour.points} onMarkerClick={this.handlePointSelected} />
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <PointDetailsContainer tour={this.props.selectedTour} {...this.state} />
+        </Grid.Column>
+      </Grid>
     );
   }
 }

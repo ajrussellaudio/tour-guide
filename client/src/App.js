@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import ToursContainer from './containers/ToursContainer';
 import TourDetailsContainer from './containers/TourDetailsContainer';
 

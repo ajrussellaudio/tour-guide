@@ -5,7 +5,6 @@ export default (props) => {
   if (!props.point) return null;
   return (
     <Container>
-      <Header as="h5">{props.info}</Header>
       <Card>
         <Image src={props.point.image_url}/>
         <Card.Content>
