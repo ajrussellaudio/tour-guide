@@ -16,6 +16,13 @@ Point.create([
     longitude: -3.19648,
     tour: tour
   }, {
+    name: "Falkirk",
+    image_url: "https://www.thebimblers.com/wp-content/uploads/2017/01/The-Kelpies-Water-Horses.jpg",
+    info: "Home of the Kelpies, and not much else.",
+    latitude: 55.9991,
+    longitude: -3.8345,
+    tour: tour
+  }, {
     name: "Glasgow",
     image_url: "https://peoplemakeglasgow.com/images/Clydeside1.jpg",
     info: "Dear green place. Second city of the Empire. The Big G. G-town. Home.",
