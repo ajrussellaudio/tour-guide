@@ -10,7 +10,7 @@ export default class ToursContainer extends React.Component {
   }
 
   componentDidMount() {
-    const url = "api/tours"
+    const url = "/tours"
     fetch(url)
       .then(response => response.json())
       .then(tours => this.setState({
