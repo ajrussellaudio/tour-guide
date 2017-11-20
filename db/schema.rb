@@ -10,26 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171119183308) do
+ActiveRecord::Schema.define(version: 20171120133208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "points", force: :cascade do |t|
-    t.text     "info"
-    t.string   "name"
-    t.string   "image_url"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
+  create_table "points", id: :serial, force: :cascade do |t|
+    t.text "info"
+    t.string "name"
+    t.string "image_url"
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "tour_id"
-    t.index ["tour_id"], name: "index_points_on_tour_id", using: :btree
+    t.integer "tour_id"
+    t.string "location"
+    t.index ["tour_id"], name: "index_points_on_tour_id"
   end
 
-  create_table "tours", force: :cascade do |t|
-    t.string   "name"
-    t.text     "info"
+  create_table "tours", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
