@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import PointsMap from '../components/PointsMap';
 import PointDetailsContainer from './PointDetailsContainer';
 
