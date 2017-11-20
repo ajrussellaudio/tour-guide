@@ -9,7 +9,7 @@ export default class TourDetailsContainer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const url = "/tours/" + nextProps.selectedTour;
+    const url = "/api/tours/" + nextProps.selectedTour;
     fetch(url)
       .then(response => response.json())
       .then(tour => this.setState({tour}))
