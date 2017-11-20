@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import ToursContainer from './containers/ToursContainer';
 import TourDetailsContainer from './containers/TourDetailsContainer';
 
@@ -18,10 +18,14 @@ class App extends Component {
 
   render() {
     return (
-      <Container className="App">
-        <ToursContainer onChange={this.handleTourSelected} />
-        <TourDetailsContainer {...this.state} />
-      </Container>
+      <Grid classname="App">
+        <Grid.Column width={3}>
+          <ToursContainer onChange={this.handleTourSelected} />
+        </Grid.Column>
+        <Grid.Column width={13}>
+          <TourDetailsContainer {...this.state} />
+        </Grid.Column>
+      </Grid>
     );
   }
 }
