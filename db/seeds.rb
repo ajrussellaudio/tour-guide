@@ -2,7 +2,7 @@ Point.delete_all
 Tour.delete_all
 
 tour = Tour.new({
-  name: "Glasgow to Edinburgh",
+  name: "Edinburgh to Glasgow",
   info: "A wee trip from the country's capital to its finest city."
 })
 tour.save
