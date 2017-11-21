@@ -2,16 +2,16 @@
     z-index: 0;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 900px){
   .leaflet-container {
-    height: 50vh;
+    height: 100vh;
     width: 100%;
   }
 }
 
-@media all and (min-width: 900px){
+@media all and (max-width: 470px) {
   .leaflet-container {
-    height: 100vh;
+    height: 50vh;
     width: 100%;
   }
 }

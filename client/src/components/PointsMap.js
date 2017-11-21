@@ -20,10 +20,10 @@ export default (props) => {
     )
   })
   return (
-    <Container fluid>
+    <Container>
       <Map bounds={props.points.map(point => extractPosition(point))}>
         <TileLayer
-          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          url='http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         {markers}
