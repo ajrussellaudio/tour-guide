@@ -1,6 +1,5 @@
 import React from 'react';
 import { Map, Marker, TileLayer } from 'react-leaflet';
-import { Container } from 'semantic-ui-react';
 
 function extractPosition(point) {
   return {
@@ -19,7 +18,6 @@ export default (props) => {
     )
   })
   return (
-    <Container>
       <Map bounds={props.points.map(point => extractPosition(point))}>
         <TileLayer
           url='http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
@@ -27,6 +25,5 @@ export default (props) => {
         />
         {markers}
       </Map>
-    </Container>
   )
 }

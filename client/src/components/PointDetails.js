@@ -11,15 +11,13 @@ function paragraphs(text) {
 export default (props) => {
   if (!props.point) return null;
   return (
-    <Container>
-      <Card fluid>
-        <Image src={props.point.image_url}/>
-        <Card.Content>
-          <Card.Header>{props.point.name}</Card.Header>
-          <Card.Meta>{props.point.street}</Card.Meta>
-          <Card.Description>{paragraphs(props.point.info)}</Card.Description>
-        </Card.Content>
-      </Card>
-    </Container>
+    <Card fluid>
+      <Image src={props.point.image_url}/>
+      <Card.Content>
+        <Card.Header>{props.point.name}</Card.Header>
+        <Card.Meta>{props.point.street}</Card.Meta>
+        <Card.Description>{paragraphs(props.point.info)}</Card.Description>
+      </Card.Content>
+    </Card>
   );
 }
