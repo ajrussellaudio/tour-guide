@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
 import PointsMap from '../components/PointsMap';
 import PointDetailsContainer from './PointDetailsContainer';
 
@@ -27,14 +26,10 @@ export default class TourDetailsContainer extends React.Component {
   render() {
     if (!this.state.tour) return null;
     return (
-      <Grid stackable id="tour-details">
-        <Grid.Column width={8}>
-          <PointsMap points={this.state.tour.points} onMarkerClick={this.handlePointSelected} />
-        </Grid.Column>
-        <Grid.Column width={8}>
-          <PointDetailsContainer tour={this.props.selectedTour} {...this.state} />
-        </Grid.Column>
-      </Grid>
+      <div id="tour-details">
+        <PointsMap points={this.state.tour.points} onMarkerClick={this.handlePointSelected} />
+        <PointDetailsContainer tour={this.props.selectedTour} {...this.state} />
+      </div>
     );
   }
 }
