@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Card, Image } from 'semantic-ui-react';
+import { Card, CardMedia, CardTitle, CardText } from 'material-ui';
 
 function paragraphs(text) {
   if (!text) return null;
@@ -10,14 +10,24 @@ function paragraphs(text) {
 
 export default (props) => {
   if (!props.point) return null;
+
+  const title = (point) => {
+    const cardTitle = <CardTitle title={point.name} subtitle={point.street}/>
+    if (point.image_url) {
+      return (
+        <CardMedia overlay={cardTitle}>
+          <img src={point.image_url} alt={point.name}/>
+        </CardMedia>
+      )
+    } else {
+      return cardTitle
+    }
+  }
+
   return (
-    <Card fluid>
-      <Image src={props.point.image_url}/>
-      <Card.Content>
-        <Card.Header>{props.point.name}</Card.Header>
-        <Card.Meta>{props.point.street}</Card.Meta>
-        <Card.Description>{paragraphs(props.point.info)}</Card.Description>
-      </Card.Content>
+    <Card style={{width: 600}}>
+      { title(props.point) }
+      <CardText>{paragraphs(props.point.info)}</CardText>
     </Card>
   );
 }

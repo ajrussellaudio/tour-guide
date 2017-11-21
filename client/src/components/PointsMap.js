@@ -21,13 +21,12 @@ export default (props) => {
 
   const style = {
     height: 400,
-    width: 400,
-    margin: 0,
-    display: 'inline-block'
+    width: 600,
+    margin: 0
   }
 
   return (
-    <Paper style={style} zDepth={3}>
+    <Paper style={style} zDepth={1}>
       <Map
         bounds={props.points.map(point => extractPosition(point))}
         boundsOptions={{padding: [10, 10]}}>

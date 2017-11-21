@@ -26,7 +26,7 @@ export default class TourDetailsContainer extends React.Component {
   render() {
     if (!this.state.tour) return null;
     return (
-      <div id="tour-details">
+      <div id="tour-details" className="wrapper">
         <PointsMap points={this.state.tour.points} onMarkerClick={this.handlePointSelected} />
         <PointDetailsContainer tour={this.props.selectedTour} {...this.state} />
       </div>
