@@ -7,6 +7,7 @@ export default class ToursContainer extends React.Component {
     this.state = {
       tours: []
     };
+    this.handleSelection = this.handleSelection.bind(this);
   }
 
   componentDidMount() {
@@ -18,9 +19,13 @@ export default class ToursContainer extends React.Component {
       }))
   }
 
+  handleSelection(e, k, value) {
+    this.props.onChange(value)
+  }
+
   render() {
     return (
-      <ToursSelector tours={this.state.tours} onChange={this.props.onChange}/>
+      <ToursSelector tours={this.state.tours} onChange={this.handleSelection}/>
     )
   }
 };

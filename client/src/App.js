@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Container } from 'semantic-ui-react';
 import ToursContainer from './containers/ToursContainer';
 import TourDetailsContainer from './containers/TourDetailsContainer';
 
@@ -12,16 +11,16 @@ class App extends Component {
     this.handleTourSelected = this.handleTourSelected.bind(this);
   }
 
-  handleTourSelected(e, {value}) {
-    this.setState({selectedTour: value})
+  handleTourSelected(selectedId) {
+    this.setState({selectedTour: selectedId})
   }
 
   render() {
     return (
-      <Container className="App" fluid>
+      <div className="App">
         <ToursContainer onChange={this.handleTourSelected} />
         <TourDetailsContainer {...this.state} />
-      </Container>
+      </div>
     );
   }
 }
