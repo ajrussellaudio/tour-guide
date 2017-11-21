@@ -6,7 +6,7 @@ export default class PointDetailsContainer extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (!nextProps.selectedPoint) return null;
-    const url = `/api/tours/${nextProps.tour}/points/${nextProps.selectedPoint}`
+    const url = `/api/points/${nextProps.selectedPoint}`
     fetch(url)
       .then(response => response.json())
       .then(point => this.setState({point}))
@@ -14,6 +14,7 @@ export default class PointDetailsContainer extends React.Component {
   }
 
   render() {
+    if (!this.props.selectedPoint) return null;
     return <PointDetails {...this.state} />;
   }
 }

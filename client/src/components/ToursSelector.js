@@ -15,6 +15,7 @@ export default (props) => {
 
   return (
     <SelectField
+      value={props.selected}
       onChange={props.onChange}
       floatingLabelText="Tour"
     >

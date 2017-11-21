@@ -25,7 +25,7 @@ export default class ToursContainer extends React.Component {
 
   render() {
     return (
-      <ToursSelector tours={this.state.tours} onChange={this.handleSelection}/>
+      <ToursSelector tours={this.state.tours} onChange={this.handleSelection} selected={this.props.selectedTour}/>
     )
   }
 };

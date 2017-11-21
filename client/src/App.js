@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ToursContainer onChange={this.handleTourSelected} />
+        <ToursContainer onChange={this.handleTourSelected} {...this.state}/>
         <TourDetailsContainer {...this.state} />
       </div>
     );
