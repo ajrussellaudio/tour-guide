@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Header, Card, Image } from 'semantic-ui-react';
+import { Container, Card, Image } from 'semantic-ui-react';
 
 function paragraphs(text) {
+  if (!text) return null;
   return text.split("\n\n").map((paragraph, i) => {
     return <p key={i}>{paragraph}</p>
   });

@@ -17,6 +17,7 @@ export default class TourDetailsContainer extends React.Component {
     fetch(url)
     .then(response => response.json())
     .then(tour => this.setState({tour}))
+    .catch(console.log)
   }
 
   handlePointSelected(point) {
@@ -26,7 +27,7 @@ export default class TourDetailsContainer extends React.Component {
   render() {
     if (!this.state.tour) return null;
     return (
-      <Grid stackable>
+      <Grid stackable id="tour-details">
         <Grid.Column width={8}>
           <PointsMap points={this.state.tour.points} onMarkerClick={this.handlePointSelected} />
         </Grid.Column>

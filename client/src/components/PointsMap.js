@@ -1,5 +1,4 @@
 import React from 'react';
-import './leaflet-map.css'
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import { Container } from 'semantic-ui-react';
 
