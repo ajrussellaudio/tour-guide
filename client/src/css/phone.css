@@ -1,8 +1,3 @@
-body, html, #root, #App, .container {
-  height: 100%;
-  margin: 0;
-}
-
 @media all and (min-width: 320px) {
   body {
     padding: 20px 10px;
@@ -14,23 +9,10 @@ body, html, #root, #App, .container {
   }
 
   .leaflet-container {
-    height: 100%;
-    width: 100%;
-  }
-}
-
-@media all and (min-width: 720px) {
-  #tour-details {
-    margin: 0;
-    height: 70%;
+    height: 50vh;
   }
 
-  .leaflet-container {
-    height: 100%;
-    width: 100%;
+  .ui.grid > .column, .ui.stackable.grid > .column {
+    padding: 0 !important;
   }
-}
-
-.leaflet-container {
-    z-index: 0;
 }
